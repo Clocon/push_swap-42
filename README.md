@@ -75,6 +75,33 @@ I have used structures to carry out the project.
 
 In this way, we check if the arguments need to be passed by the ft_split function, if not, we pass the memory address of the 2nd argument of argv, to avoid the "./push_swap" argument and in this way we can 100% reuse the function 'fill_a'.
 
+## Checkers
+
+I have used different scripts to check the operation, since the quantities between 2 - 5 have an independent ordering:
+
+- checker_OS : this executable receives the same arguments as 'push_swap' and always returns OK or KO depending on whether the sort is successful or not, on the number of moves allowed or not. An example:
+
+            ./push_swap 9 54 62 -123 756 -12  | ./checker_OS 9 54 62 -123 756 -12 
+            OK
+- myowntest.sh contains execution of all possible number combinations from 0 - 3, also passing checker_OS.
+
+- myowntest5.sh contains execution of all possible number combinations from 0 - 4, also passing checker_OS.
+
+- push_swap_test.sh is a test carried out by a colleague of 42, this test that checks all the possible error control errors and all the 'OK' for the different levels of number of movements for the effectiveness of the program, its complete execution may take time several minutes, be patient, it's worth it.
+
+- python_visualizer.py is used to do a visual check of the sort process. Here are some execution examples:
+
+1. These first tests are not graphic, but it is the one that allows us to take a random battery of numbers in quantities comprised of (X..Y).
+
+            ARG=`ruby -e "puts (0..99).to_a.shuffle.join(' ')"`; ./push_swap $ARG
+            ARG=`ruby -e "puts (0..99).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker_OS $ARG 
+            
+2. This is the test that will give us a visual result of our execution:
+
+            python3 python_visualizer.py `ruby -e "puts (-50..50).to_a.shuffle.join(' ')"`
+
+![57738594-6b6ae500-76b0-11e9-9d29-0f59ee825e8e](https://user-images.githubusercontent.com/113030191/229157667-6bc43553-6238-4c4b-94e4-68a448a77dab.gif)
+
 ## Conclusion
 
 In conclusion, we have implemented the push_swap project using the radix sort algorithm to sort an unsorted list of integers. The objective of the project is to sort the list in the least number of operations possible, using two stacks and a limited set of operations. The radix sort algorithm is an efficient way to sort integers, and we have seen how we can use it to implement the push_swap project.
