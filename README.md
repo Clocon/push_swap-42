@@ -1,6 +1,6 @@
 # PUSH_SWAP
 
-This is a project for the 42 school curriculum, where we are asked to sort an unsorted list of integers using two stacks and a limited set of operations. In this implementation, we will be using the radix sort algorithm to sort the list.
+This is my implementation of the push_swap project for the Cursus 42 program, where we are asked to sort an unsorted list of integers using two stacks and a limited set of operations. In this implementation, we will be using the radix sort algorithm to sort the list.
 
 <img width="1151" alt="image" src="https://user-images.githubusercontent.com/113030191/229107482-11bde195-db18-4e13-a476-f193e2cdb3e5.png">
 
@@ -45,7 +45,7 @@ The algorithm works by iterating through each digit of the numbers in the list, 
 Our implementation of the radix classification algorithm will be done in the following steps:
 
 1. Get the maximum number of digits in the list of integers to be sorted.
-2. We'll use array rotation to locate which ones should be pushed to A or B.
+2. Use array rotation to locate which ones should be pushed to A or B.
 3. Within each iteration, partition the list of integers based on the value of the current digit, and push each partition onto stack B. Then, push the integers from stack B back onto stack A in the correct order.
 
 
@@ -54,9 +54,30 @@ Our implementation of the radix classification algorithm will be done in the fol
 In order to reach a smaller number of movements and get a little more note with this algorithm, some checks are implemented that check whether the total or partial of the stack_a is already ordered to stop the execution and avoid unnecessary movements.
 
 <img width="444" alt="image" src="https://user-images.githubusercontent.com/113030191/229117900-513e1902-3a53-4d00-b238-a73a3d5c3057.png">
-RedRow : To check if the sort is complete.
 
-GreenRow : To check if the stack_a is sorted.
+- RedRow : To check if the sort is complete.
+- GreenRow : To check if the stack_a is sorted.
+
+**Variable management**
+
+I have used structures to carry out the project.
+
+<img width="223" alt="image" src="https://user-images.githubusercontent.com/113030191/229145035-96b0e19c-fa2a-47dc-ac36-18c80be64dea.png">
+
+- This is used once the numbers have been collected, to replace the numbers with what will be your order later and in this way facilitate the code.
+
+<img width="219" alt="image" src="https://user-images.githubusercontent.com/113030191/229145883-ad4fd570-68a2-4fea-90e1-b743be0604a0.png">
+
+- This second structure is used to store the numbers in a two-dimensional array, which is very useful if we have to use the ft_split function, if not necessary, we could do without it.
+
+<img width="418" alt="image" src="https://user-images.githubusercontent.com/113030191/229147022-5276f8db-ae71-4e4f-932b-fe02e19129ad.png">
+
+
+In this way, we check if the arguments need to be passed by the ft_split function, if not, we pass the memory address of the 2nd argument of argv, to avoid the "./push_swap" argument and in this way we can 100% reuse the function 'fill_a'.
+
+## Conclusion
+
+In conclusion, we have implemented the push_swap project using the radix sort algorithm to sort an unsorted list of integers. The objective of the project is to sort the list in the least number of operations possible, using two stacks and a limited set of operations. The radix sort algorithm is an efficient way to sort integers, and we have seen how we can use it to implement the push_swap project.
 
 ### Links to my other projects at 42:
 
