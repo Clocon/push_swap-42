@@ -114,3 +114,4 @@ In conclusion, we have implemented the push_swap project using the radix sort al
 - **[get_next_line](../../../get_next_line-42)**
 - **[pipex](../../../pipex-42)**
 - **[so_long](../../../so_long-42)**
+- **[philosophers](../../../philosophers-42)**
